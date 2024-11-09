@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:yourpen_1/controls/gradient_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:yourpen_1/routes/route_names.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
+
+  void navigateToSignIn(BuildContext context) {
+    Navigator.pushReplacementNamed(context, RouteNames.signIn);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +24,8 @@ class StartPage extends StatelessWidget {
                 opacity: 0.05,
                 child: SvgPicture.asset(
                   "assets/images/pero.svg",
-                ))),
+                ))
+                ),
         Positioned(
             bottom: -50,
             right: -30,
@@ -27,7 +33,8 @@ class StartPage extends StatelessWidget {
                 opacity: 0.05,
                 child: SvgPicture.asset(
                   "assets/images/pero.svg",
-                ))),
+                ))
+                ),
         Center(
           child: Column(
             children: [
@@ -57,11 +64,12 @@ class StartPage extends StatelessWidget {
                         color: Color(0xff606060),
                         fontSize: 32,
                         fontFamily: "GentiumBasic"))
-              ])),
+              ])
+              ),
               const SizedBox(height: 50),
               const Text(
                 "Everything you wish to",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 20, color: Color(0xff606060), fontWeight: FontWeight.w600),
               ),
               // const Text(""),
               RichText(
@@ -80,7 +88,8 @@ class StartPage extends StatelessWidget {
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
                         fontFamily: "Raleway"))
-              ])),
+              ])
+              ),
               const SizedBox(height: 70),
               Container(
                 decoration: const BoxDecoration(boxShadow: [
@@ -91,7 +100,9 @@ class StartPage extends StatelessWidget {
                       offset: Offset(10, 15))
                 ]),
                 child: GradientButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    navigateToSignIn(context);
+                  },
                   padding:
                       const EdgeInsets.symmetric(vertical: 18, horizontal: 60),
                   gradient: const LinearGradient(

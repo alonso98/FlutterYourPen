@@ -14,7 +14,6 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       theme: lightTheme,
       onGenerateRoute: Routes.generateRoute,
-      initialRoute: Routes.start,
       builder: (context, child) {
         return SafeArea(
           child: child!,
