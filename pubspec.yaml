@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_gradient_button: ^0.0.1
+  flutter_svg: ^2.0.14
 
 dev_dependencies:
   flutter_test:
