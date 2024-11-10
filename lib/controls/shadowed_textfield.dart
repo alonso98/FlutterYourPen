@@ -38,7 +38,7 @@ class ShadowedTextfieldState extends State<ShadowedTextfield> {
       child: TextField(
         obscureText: isObscured,
         readOnly: isReadOnly,
-        style: TextStyle(
+        style: const TextStyle(
           color: Color(0xff606060),
           fontWeight: FontWeight.w600
         ),
