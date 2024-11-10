@@ -48,9 +48,15 @@ class SignInPage extends StatelessWidget {
                               color: Color(0xff606060),
                               fontSize: 32,
                               fontFamily: "GentiumBasic"))
-                    ])),
-                    const SizedBox(height: 80),
-                    const ShadowedTextfield(hintText: "Email")
+                    ])
+                    ),
+                    const SizedBox(height: 50),
+                    const Text("Please log in or create"),
+                    const Text("new account"),
+                    const SizedBox(height: 40,),
+                    const ShadowedTextfield(hintText: "Email"),
+                    const SizedBox(height: 12,),
+                    const ShadowedTextfield(hintText: "Password", isPassword: true,),
                   ],
                 ),
                 const Column(

@@ -4,7 +4,10 @@ final ThemeData lightTheme = ThemeData(
   useMaterial3: true,
   primaryColor: const Color(0xff8545D8),
   scaffoldBackgroundColor: Colors.white,
-  fontFamily: "Raleway"
+  fontFamily: "Raleway",
+  textTheme: const TextTheme(
+    bodyMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w600)
+  )
 
   // filledButtonTheme: FilledButtonThemeData(
   //   style: ButtonStyle()
