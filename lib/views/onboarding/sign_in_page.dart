@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:yourpen_1/controls/gradient_button.dart';
 import 'package:yourpen_1/controls/shadowed_textfield.dart';
+import 'package:yourpen_1/routes/route_names.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
+
+  void navigateToRefreshPassword(BuildContext context) {
+    Navigator.pushNamed(context, RouteNames.refreshPassword);
+  }
+
+  void navigateToSignUp(BuildContext context) {
+    Navigator.pushNamed(context, RouteNames.signUp);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +91,9 @@ class SignInPage extends StatelessWidget {
                               child: child,
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            navigateToRefreshPassword(context);
+                          },
                           child: const Text("I forgot password",
                               style: TextStyle(
                                   fontSize: 18,
@@ -134,7 +145,9 @@ class SignInPage extends StatelessWidget {
                                 child: child,
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              navigateToSignUp(context);
+                            },
                             child: const Text("Sign up",
                                 style: TextStyle(
                                     fontSize: 18,
