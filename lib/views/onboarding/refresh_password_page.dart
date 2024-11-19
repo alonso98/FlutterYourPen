@@ -3,7 +3,9 @@ import 'package:yourpen_1/controls/gradient_button.dart';
 import 'package:yourpen_1/controls/shadowed_textfield.dart';
 
 class RefreshPasswordPage extends StatelessWidget {
-  const RefreshPasswordPage({super.key});
+  RefreshPasswordPage({super.key});
+
+  final emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +57,7 @@ class RefreshPasswordPage extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              const ShadowedTextfield(hintText: "Email"),
+              ShadowedTextfield(hintText: "Email", controller: emailController,),
               const SizedBox(height: 50,),
               Container(
                 decoration: const BoxDecoration(boxShadow: [

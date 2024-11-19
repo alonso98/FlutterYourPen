@@ -5,7 +5,7 @@ class ShadowedTextfieldState extends State<ShadowedTextfield> {
   late bool isObscured;
   late bool isPassword;
   late bool isReadOnly;
-  // late TextEditingController controller;
+  late TextEditingController controller;
 
   @override
   void initState() {
@@ -15,6 +15,7 @@ class ShadowedTextfieldState extends State<ShadowedTextfield> {
     isPassword = widget.isPassword;
     isReadOnly = widget.isReadOnly;
     hintText = widget.hintText;
+    controller = widget.controller;
   }
 
   void toggleObscurity() {
@@ -38,6 +39,7 @@ class ShadowedTextfieldState extends State<ShadowedTextfield> {
       child: TextField(
         obscureText: isObscured,
         readOnly: isReadOnly,
+        controller: controller,
         style: const TextStyle(
           color: Color(0xff606060),
           fontWeight: FontWeight.w600
@@ -67,13 +69,14 @@ class ShadowedTextfield extends StatefulWidget {
   final String hintText;
   final bool isPassword;
   final bool isReadOnly;
-  // final TextEditingController? controller;
+  final TextEditingController controller;
 
   const ShadowedTextfield(
       {super.key,
       required this.hintText,
       this.isPassword = false,
-      this.isReadOnly = false});
+      this.isReadOnly = false,
+      required this.controller});
 
   @override
   ShadowedTextfieldState createState() => ShadowedTextfieldState();

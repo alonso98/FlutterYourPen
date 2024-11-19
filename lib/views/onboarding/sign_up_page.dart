@@ -4,7 +4,11 @@ import 'package:yourpen_1/controls/shadowed_textfield.dart';
 import 'package:yourpen_1/routes/route_names.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+  SignUpPage({super.key});
+
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -58,20 +62,25 @@ class SignUpPage extends StatelessWidget {
                     // const Text("Please log in or create"),
                     const Text("Create an account"),
                     const SizedBox(height: 40),
-                    const ShadowedTextfield(hintText: "Email"),
+                    ShadowedTextfield(
+                      hintText: "Email",
+                      controller: emailController,
+                    ),
                     const SizedBox(
                       height: 12,
                     ),
-                    const ShadowedTextfield(
+                    ShadowedTextfield(
                       hintText: "Password",
                       isPassword: true,
+                      controller: passwordController,
                     ),
                     const SizedBox(
                       height: 12,
                     ),
-                    const ShadowedTextfield(
+                    ShadowedTextfield(
                       hintText: "Confirm password",
                       isPassword: true,
+                      controller: confirmPasswordController
                     ),
                     const SizedBox(
                       height: 56,

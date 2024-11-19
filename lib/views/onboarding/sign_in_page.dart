@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:yourpen_1/controls/gradient_button.dart';
 import 'package:yourpen_1/controls/shadowed_textfield.dart';
 import 'package:yourpen_1/routes/route_names.dart';
+import 'package:yourpen_1/view_models/on_boarding/sign_in_viewmodel.dart';
 
 class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
+  SignInPage({super.key});
+
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
 
   void navigateToRefreshPassword(BuildContext context) {
     Navigator.pushNamed(context, RouteNames.refreshPassword);
@@ -18,6 +23,7 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     final ColorScheme colorScheme = theme.colorScheme;
+    final authViewModel = Provider.of<AuthViewModel>(context);
 
     return Scaffold(body: LayoutBuilder(
         builder: (BuildContext buildContext, BoxConstraints constraints) {
@@ -68,13 +74,17 @@ class SignInPage extends StatelessWidget {
                     const SizedBox(
                       height: 40,
                     ),
-                    const ShadowedTextfield(hintText: "Email"),
+                    ShadowedTextfield(
+                      hintText: "Email",
+                      controller: usernameController,
+                    ),
                     const SizedBox(
                       height: 12,
                     ),
-                    const ShadowedTextfield(
+                    ShadowedTextfield(
                       hintText: "Password",
                       isPassword: true,
+                      controller: passwordController,
                     ),
                     Align(
                       alignment: Alignment.centerRight,
@@ -104,7 +114,14 @@ class SignInPage extends StatelessWidget {
                       height: 56,
                     ),
                     GradientButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        try {
+                          await authViewModel.login(usernameController.text, passwordController.text);
+                          Navigator.pushReplacementNamed(context, RouteNames.home);
+                        } catch (e) {
+                          rethrow;
+                        }
+                      },
                       padding: const EdgeInsets.symmetric(
                           vertical: 18, horizontal: 60),
                       borderRadius: 30,

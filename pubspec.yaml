@@ -10,7 +10,10 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_gradient_button: ^0.0.1
+  flutter_secure_storage: ^9.2.2
   flutter_svg: ^2.0.14
+  http: ^1.2.2
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
