@@ -67,7 +67,7 @@ class RefreshPasswordPage extends StatelessWidget {
                       blurRadius: 60,
                       offset: Offset(10, 15))
                 ]),
-                child: GradientButton(
+                child: GradientLoadingButton(
                   onPressed: () {
                     // todo
                   },

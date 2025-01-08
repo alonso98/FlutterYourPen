@@ -113,8 +113,9 @@ class SignInPage extends StatelessWidget {
                     const SizedBox(
                       height: 56,
                     ),
-                    GradientButton(
-                      onPressed: () async {
+                    GradientLoadingButton(
+                      onPressed: authViewModel.isLoading ? null 
+                                                         : () async {
                         try {
                           await authViewModel.login(usernameController.text, passwordController.text);
                           Navigator.pushReplacementNamed(context, RouteNames.home);
@@ -127,6 +128,7 @@ class SignInPage extends StatelessWidget {
                       borderRadius: 30,
                       gradient: const LinearGradient(
                           colors: [Color(0xff9D68E4), Color(0xff8545D8)]),
+                      isLoading: authViewModel.isLoading,
                       child: const Text(
                         "SIGN IN",
                         style: TextStyle(

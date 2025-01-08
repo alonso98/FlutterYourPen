@@ -85,7 +85,7 @@ class SignUpPage extends StatelessWidget {
                     const SizedBox(
                       height: 56,
                     ),
-                    GradientButton(
+                    GradientLoadingButton(
                       onPressed: () {},
                       padding: const EdgeInsets.symmetric(
                           vertical: 18, horizontal: 60),
