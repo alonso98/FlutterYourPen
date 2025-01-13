@@ -5,8 +5,13 @@ final ThemeData lightTheme = ThemeData(
   primaryColor: const Color(0xff8545D8),
   scaffoldBackgroundColor: Colors.white,
   fontFamily: "Raleway",
+  appBarTheme: const AppBarTheme(
+    titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w600, color:  Color(0xff8545D8)),
+    iconTheme: IconThemeData(color: Color(0xff8545D8))
+  ),
   textTheme: const TextTheme(
-    bodyMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w600)
+    bodyMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+    headlineLarge: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)
   )
 
   // filledButtonTheme: FilledButtonThemeData(

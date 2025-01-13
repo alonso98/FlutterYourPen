@@ -25,7 +25,14 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(getTitleForPage(currentIndex)),
+        backgroundColor: Colors.transparent,
+        title: Row(
+          spacing: 5,
+          children: [
+            Text(getTitleForPage(currentIndex)),
+            getTitleIcon(currentIndex)
+          ],
+        )
       ),
       body: IndexedStack(
         index: currentIndex,
@@ -51,6 +58,14 @@ class HomePageState extends State<HomePage> {
       case 0: return "Lists";
       case 1: return "Settings";
       default: return "Unknown";
+    }
+  }
+
+  Icon getTitleIcon(int index){
+    switch (index) {
+      case 0: return const Icon(Icons.list_alt);
+      case 1: return const Icon(Icons.settings);
+      default: return const Icon(Icons.emoji_symbols);
     }
   }
 }
