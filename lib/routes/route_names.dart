@@ -5,4 +5,6 @@ class RouteNames {
   static const String refreshPassword = "/refreshPassword";
 
   static const String home = "/home";
+  static const String lists = "/lists";
+  static const String settings = "/settings";
 }
