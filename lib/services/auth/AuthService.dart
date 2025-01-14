@@ -28,4 +28,18 @@ class AuthService {
   Future<void> logout() async {
     await storageService.deleteAll();
   }
+
+  Future<bool> isUserAthenticated() async {
+    final token = await storageService.getToken();
+
+    if (token == null || token.token.isEmpty) {
+      return false;
+    }
+
+    if (token.expireDate.isBefore(DateTime.now())) {
+      return false;
+    }
+
+    return true;
+  }
 }

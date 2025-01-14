@@ -4,6 +4,7 @@ import 'package:yourpen_1/routes/routes.dart';
 import 'package:yourpen_1/themes/light_theme.dart';
 import 'package:yourpen_1/view_models/lists/all_lists_viewmodel.dart';
 import 'package:yourpen_1/view_models/on_boarding/sign_in_viewmodel.dart';
+import 'package:yourpen_1/views/splash_screen.dart';
 
 void main() {
   runApp(
@@ -29,6 +30,7 @@ class MainApp extends StatelessWidget {
           child: child!,
         );
       },
+      home: const SplashScreen(),
     );
   }
 }
