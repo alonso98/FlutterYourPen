@@ -114,15 +114,16 @@ class SignInPage extends StatelessWidget {
                       height: 56,
                     ),
                     GradientLoadingButton(
-                      onPressed: authViewModel.isLoading ? null 
-                                                         : () async {
-                        try {
-                          await authViewModel.login(usernameController.text, passwordController.text);
-                          Navigator.pushReplacementNamed(context, RouteNames.home);
-                        } catch (e) {
-                          rethrow;
-                        }
-                      },
+                      onPressed: authViewModel.isLoading
+                          ? null
+                          : () async {
+                              if (await authViewModel.login(
+                                  usernameController.text,
+                                  passwordController.text)) {
+                                Navigator.pushReplacementNamed(
+                                    context, RouteNames.home);
+                              }
+                            },
                       padding: const EdgeInsets.symmetric(
                           vertical: 18, horizontal: 60),
                       borderRadius: 30,

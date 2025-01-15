@@ -6,6 +6,7 @@ import 'package:yourpen_1/views/onboarding/refresh_password_page.dart';
 import 'package:yourpen_1/views/onboarding/sign_in_page.dart';
 import 'package:yourpen_1/views/onboarding/sign_up_page.dart';
 import 'package:yourpen_1/views/onboarding/start_page.dart';
+import 'package:yourpen_1/views/splash_screen.dart';
 
 class Routes {
 
@@ -18,7 +19,7 @@ class Routes {
 
       case RouteNames.home: return MaterialPageRoute(builder: (_) => HomePage());
       case RouteNames.lists: return MaterialPageRoute(builder: (_) => ListsPage());
-      default: return MaterialPageRoute(builder: (_) => const StartPage());
+      default: return MaterialPageRoute(builder: (_) => const SplashScreen());
     }
   }
 }
