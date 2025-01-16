@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 final ThemeData lightTheme = ThemeData(
   useMaterial3: true,
   primaryColor: const Color(0xff8545D8),
-  scaffoldBackgroundColor: Colors.white,
+  scaffoldBackgroundColor: const Color(0xffFAF7FF),
   fontFamily: "Raleway",
   appBarTheme: const AppBarTheme(
     titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w600, color:  Color(0xff8545D8)),
@@ -12,6 +12,9 @@ final ThemeData lightTheme = ThemeData(
   textTheme: const TextTheme(
     bodyMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
     headlineLarge: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)
+  ),
+  navigationBarTheme: const NavigationBarThemeData(
+    backgroundColor: Color(0xffFAF7FF),
   )
 
   // filledButtonTheme: FilledButtonThemeData(
